@@ -1,0 +1,7 @@
+To Do:
+
+* Show more button for Abstract:
+https://jsfiddle.net/rLguxo5n/1/
+
+* Play two videos (e.g. caltech-videos) simultaneously:
+https://bocoup.com/blog/html5-video-synchronizing-playback-of-two-videos 

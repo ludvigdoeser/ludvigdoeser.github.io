@@ -4,6 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 (function($) {
 
 	var	$window = $(window),
@@ -79,5 +80,13 @@
 			});
 
 		}
+
+	// Added by Ludvig 2021-11-06
+		$('.show-more').on('click', function() {
+		  $('.additional-content').toggle(); //$(this).siblings('.additional-content').toggle();
+		});
+		$('.show-more2').on('click', function() {
+		  $('.additional-content2').toggle(); //$(this).siblings('.additional-content').toggle();
+		});
 
 })(jQuery);
