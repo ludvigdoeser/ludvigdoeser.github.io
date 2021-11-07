@@ -1,7 +1,13 @@
 To Do:
 
-* Show more button for Abstract:
-https://jsfiddle.net/rLguxo5n/1/
+* Click-able Images
 
 * Play two videos (e.g. caltech-videos) simultaneously:
-https://bocoup.com/blog/html5-video-synchronizing-playback-of-two-videos 
+https://bocoup.com/blog/html5-video-synchronizing-playback-of-two-videos
+
+
+FIXED:
+------
+
+* Show more button for Abstract:
+https://jsfiddle.net/rLguxo5n/1/

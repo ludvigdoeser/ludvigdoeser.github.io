@@ -11,6 +11,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -44,25 +50,138 @@
 					<article id="main">
 						<header>
 							<h2>Course Projects</h2>
-							<p>Master Thesis at SU, Summer Research Intern at Caltech, and Bachelor Thesis at KTH </p>
+							<p>Done during my civil engineer program in Engineering Physics (2016-2021)</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>Areas of Interest</h3>
-								There are two major research areas I have been interested in:
-								<ul>
-										<li><b>Theoretical Physics</b>
-										(including cosmology, astrophysics, and the application of statistical tools such as
-										machine learning): with the goal to learn more about the laws of physics that govern our Universe. </li>
-										<li><b>Control Theory</b>
-										(including non-linear control theory, safety-critical systems, and robotics):
-										with the goal to control and/or mimic phenomena that exists in nature. </li>
-								</ul>
+								<p>I here briefly present some of the major projects I have done during courses at KTH Royal Institute of Technology (KTH)
+                and at the University of Texas at Austin (UTA) during my exchange semester:</p>
+                <ul>
+                    <li><b>VAE with VampPrior</b> (<i>DD2434 – Machine Learning, Advanced Course</i>; KTH, year 5)
+                    <li><b>Temperature Control in Molecular Dynamics</b> (<i>SI2530 – Computational Physics</i>; KTH, year 5)
+                    <li><b>Narrow-band Imaging of Nearby Galaxies</b> (<i>AST376 – Observational Methods in Astronomy</i>; UTA, year 4)
+                    <li><b>Tracking a Comet</b> (<i>AST376 – Observational Methods in Astronomy</i>; UTA, year 4)
 
 							<hr />
 
-							<h2>Master Thesis</h2>
+              <header>
+                <h4>VAE with VampPrior</h4>
+                <p>Course: DD2434 – Machine Learning, Advanced Course (KTH) <br>
+                  Tools: TensorFlow (Python)</p>
+              </header>
+
+              <div class="box alt">
+                <div class="row gtr-50 gtr-uniform">
+                  <div class="col-12"><span class="image fit"><img src="images/course1.png" alt="" /></span></div>
+                </div>
+              </div>
+
+              <p>Deep generative models have recently been very popular for reconstructing
+              and generating data, such as images. One of the most successful models is the
+              Variational Auto-Encoder (VAE). In <a href="https://arxiv.org/abs/1705.07120">Tomczak and Welling (2017)</a>,
+              a new Variational Mixture of Posteriors Prior (VampPrior) was introduced. It was shown to make the prior (usually
+              chosen as a standard Gaussian) more flexible, allowing it to capture the latent representation to a greater extent.
+              The statistical foundation lies in estimating the prior from the data instead of fixing it before the data acquisition. </p>
+
+              <p>In this project, we have implemented the VAE with three different priors – standard Gaussian,
+              VampPrior and VampPriordata – on the following datasets: staticMNIST, Caltech 101 Silhouette,
+              and FreyFaces from the original paper, and FashionMNIST dataset, to extend the investigation.
+              In all cases, we reproduce one of the most striking effects of using VampPrior; it
+              always outperforms the standard Gaussian prior. The image above shows a comparison between reconstructed and
+              artificially generated data for all datasets. <i>Parameters used: epochs = 1000, dimension of latent space = 40, batch size = 100,
+              number of pseudo inputs = 500.</i></p>
+
+              <hr />
+
+              <!--- Don't think I'm allowed to share course reports publically... -->
+              <!-- <p>Test: <a href="pdfs/FinalProject_LudvigDoeser_Thermostat.pdf">Report</a></p> -->
+
+              <header>
+                <h4>Temperature Control in Molecular Dynamics</h4>
+                <p>Course: SI2530 – Computational Physics (KTH)<br>
+                  Tools: MATLAB and Fortran</p>
+              </header>
+
+              <div class="box alt">
+                <div class="row gtr-50 gtr-uniform">
+                  <div class="col-4"><span class="image fit"><img src="images/course2_2.png" alt="" /></span></div>
+                  <div class="col-4"><span class="image fit"><img src="images/course2_3.png" alt="" /></span></div>
+                  <div class="col-4"><span class="image fit"><img src="images/course2_1.png" alt="" /></span></div>
+                </div>
+              </div>
+
+              <p>In molecular dynamics simulations one has to choose between different thermostats
+                to achieve a fluctuating instantaneous temperature around a constant reference temperature.
+                Two such are the Berendsen thermostat (BT) and the Nosé-Hoover thermostat (NHT), which both
+                preserve the expected Maxwell-Boltzmann Distribution for the speed of the particles (left image shows the NHT-case). In this project,
+                I show that a low $\tau$-value in BT
+                and a high $\omega$-value in NHT (middle image) increase the thermostats' performance in terms of faster
+                responses and lower fluctuations. During changes in reference temperature, however, a
+                too high $\omega$ leads to oscillations, so in this respect, the BT is more successful.
+                On the contrary, the BT fails to accurately generate energy fluctuations corresponding
+                to the thermodynamics of a canonical ensemble while the NHT succeeds; it is shown that
+                NHT generates a heat capacity per particle of $C_V = 2.67k_B$ at $T=85$K, which compares
+                very well (right image) to the experimental value of $C_{V,\text{exp}} = 2.78k_B$.
+                To switch between the thermostats, using mainly NHT but BT during changes in $T_{\text{ref}}$,
+                would therefore enhance the overall performance. </p>
+
+                <hr />
+
+                <header>
+                  <h4>Narrow-band Imaging of Nearby Galaxies</h4>
+                  <p>Course: AST376 – Observational Methods in Astronomy (UTA, year 4) <br>
+                    Tools: Python and Remote Operation of Telescope using IRAF</p>
+                </header>
+
+                <div class="box alt">
+                  <div class="row gtr-50 gtr-uniform">
+                    <div class="col-4"><span class="image fit"><img src="images/course3_4.jpg" alt="" /></span></div>
+                    <div class="col-4"><span class="image fit"><img src="images/course3_1.png" alt="" /></span></div>
+                    <div class="col-4"><span class="image fit"><img src="images/course3_2.png" alt="" /></span></div>
+
+                  </div>
+                </div>
+
+                <p>In this project, I remotely operated the 30 inch telescope (left) at McDonald’s Observatory in Fort Davis, Texas,
+                  equipped with the SDSS (Sloan Digital Sky Survey) filters ugri, plus a narrow-band filter centered on the H-alpha
+                  spectral line (Balmer series, $n=3\mapsto2$ transition). One galaxy studied was M51, of which I present
+                  my own RGB-image of it above (middle). The goal of the project was to identify star-forming
+                  regions (the blue circles in the right image) as those which have knots of excess H-alpha emission, since
+                  this is radiation coming from the re-combination of hydrogen, a process which is especially evident when
+                  stars are forming. After flux-calibrating the galaxy image using field stars,
+                  I used aperture photometry to measure the fluxes of these H-alpha knots, converting to
+                  the H-alpha luminosity using the known distances to these well studied galaxies. For M51,
+                  I found a luminosity around $10^{39}$ erg/s in the HII-regions, which is sufficiently high to
+                  indicate star formation. </p>
+
+                  <hr />
+
+                  <header>
+                    <h4>Tracking a Comet</h4>
+                    <p>Course: AST376 – Observational Methods in Astronomy (UTA, year 4) <br>
+                      Tools: Python and Remote Operation of Telescope using IRAF</p>
+                  </header>
+
+                  <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                      <div class="col-7"><span class="image fit"><img src="images/course4_2.png" alt="" /></span></div>
+                      <div class="col-4"><span class="image fit"><img src="images/course4_1.png" alt="" /></span></div>
+
+                    </div>
+                  </div>
+
+                  <p>Every once in a while, one of the 3620 known comets passes closely by our planet.
+                    Most of their orbits are known, but unpredictable perturbations require us to constantly
+                    keep track and update our orbit models. The proper motion of the comet 88P/Howell (encircled in red) was here
+                    measured on May 8 2020, using the SDSS g-filter of the $30''$ telescope at McDonald's Observatory,
+                    to be $32.41 \pm 5.16$ arcseconds per hour (right), corresponding to $6.53 \pm 1.04$ km/s. This
+                    speed is lower than the expected of around $45''$/hr, which could be explained by the comet moving more
+                    in the radial direction than predicted and/or by the short observation period, resulting in a higher error.
+                    The brightness was measured to a lower value
+                    ($16.2$) than presented by the community ($12-15.7$), which most likely is a result of high
+                    cloud cover during the observation.</p>
+
 
 							</div>
 						</section>
