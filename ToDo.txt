@@ -1,7 +1,8 @@
 To Do:
 
+* Insert Superconductor-project with videos of the loop.
 * Click-able Images
-
+* Math does not work when pushing to online webpage (only on LaTex live update page)
 * Play two videos (e.g. caltech-videos) simultaneously:
 https://bocoup.com/blog/html5-video-synchronizing-playback-of-two-videos
 
