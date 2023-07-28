@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>News and Recommendations </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+    /* Additional styles for the box container */
+    .box-container {
+      margin: 2 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+			background-color: #f7f7f7; /* New background color */ fffcf5
+    }
+
+		.tab-button {
+		      background-color: #ffffff; /* New text color for tab buttons */ fff8e7
+		    }
+
+  	</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Ludvig Doeser</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="current_research.html">Current Research</a></li>
+											<li><a href="previous_research.html">Previous Research</a></li>
+											<li><a href="course_projects.html">Course Projects</a></li>
+                      <li><a href="news_and_recommendations.html">CNews and Recommendations</a></li>
+
+
+											<!-- <li><a href="#">Sign Up</a></li> -->
+											<!-- <li><a href="#">Log In</a></li> -->
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>What is my research all about?</h2>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								AMAZING. You, a literate descendent of homo sapiens after millions years of evolution with a body consisting of atoms originally created in some star far far away, made it here! Welcome to (an attempt to) a popular science discription of what my research is all about.
+								<br></br>
+
+								<header>
+									<h4>Cosmology</h4>
+									<p>The study of the universe as a whole—its origin, structure, evolution, and eventual fate...</p>
+								</header>
+
+								How can we comprehend and map our Universe? Before we can touch upon that, we need some basic physics:
+
+								<br></br>
+
+								<!-- Responsive Tabs -->
+								<div class="box-container">
+								  <div class="tabs-container">
+								    <!-- Tab navigation -->
+								    <div class="tab-buttons">
+								      <button class="tab-button" onclick="showTabContent(0)">Speed of Light</button>
+								      <button class="tab-button" onclick="showTabContent(1)">Light Spectrum</button>
+								      <button class="tab-button" onclick="showTabContent(2)">Einstein Gravity</button>
+								      <button class="tab-button" onclick="showTabContent(3)">Dark Universe</button>
+								    </div>
+
+								    <!-- Tab content -->
+								    <div class="tab-content">
+								      <!-- Tab 1 content -->
+								      <div class="tab-item" id="tab1">
+								        <p> <br> Constant. </br> </p>
+
+												Consequence 1: See things as how they looked like in the past.  <br> </br>
+
+												<blockquote><span class="image right"><img src="images/speedoflight.jpg" alt="" /></span>
+												It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us...
+												</blockquote>
+
+												Consequence 2: Time is not absolute, but depends on how fast you move (Einstein Special Relativity). Inertial system. Train example?
+
+
+								      </div>
+								      <!-- Tab 2 content -->
+								      <div class="tab-item" id="tab2">
+								        <p> <br> Spectrum. </br> </p>
+
+												Application 1: Observations in different wavebands
+												<br></br>
+												Application 2: CMB temperature.
+												<br></br>
+												Application 3: Look in narrow wavebands: Redshifts.
+
+
+								      </div>
+								      <!-- Tab 3 content -->
+								      <div class="tab-item" id="tab3">
+								        <p> <br> Spacetime dynamics. General Relativity. </br> </p>
+
+												Matter tells space how to curve, space tells matter how to move... Einsten equation. Equivalence principle: are you accelerating or free falling?
+
+												<br></br>
+												Newtonian Gravity to Einstein.
+												<br></br>
+												Cosmological Simulations...
+
+								      </div>
+								      <!-- Tab 4 content -->
+								      <div class="tab-item" id="tab4">
+								        <p> <br> Not only is the Universe mostly empty, it is also very dark. By that, I mean it contains 95% of unknown matter/energy that does not interact with or emit light... </br> </p>
+
+												<br></br>
+												Dark Matter: the missing matter that is dark since it does not interact with photons (light).
+												<br></br>
+												Dark Energy: explains the accelerated expansion of our Universe.
+
+								      </div>
+								    </div>
+								  </div>
+									</div>
+
+								  <!-- JavaScript to handle tab switching -->
+								  <script>
+								    // Show only the content of the first tab on page load
+								    document.addEventListener('DOMContentLoaded', function() {
+								      showTabContent(0);
+								    });
+
+								    function showTabContent(tabIndex) {
+								      // Hide all tab content
+								      const tabItems = document.querySelectorAll('.tab-item');
+								      tabItems.forEach(item => item.style.display = 'none');
+
+								      // Show the selected tab content
+								      const selectedTab = document.getElementById(`tab${tabIndex + 1}`);
+								      selectedTab.style.display = 'block';
+								    }
+								  </script>
+
+									<br></br>
+									Now, with some physics in our tool box, let us traverse the history of cosmology:
+									<br></br>
+
+									<header>
+										<h4>Hubble's Discovery of an expanding Universe</h4>
+										<p>Everything is receding away from us (baloon analogy)...</p>
+									</header>
+
+									<header>
+										<h4>Cosmic Microwave Background and the Big Bang</h4>
+										<p>If everything is moving away from us, everything should have been closer in the past... BIG BANG... </p>
+									</header>
+
+									<header>
+										<h4>Mapping the Universe with Multi-Billion Dollar Surveys</h4>
+										<p>Angular position... Redshift... </p>
+									</header>
+
+									<header>
+										<h4>Digital Twin of the Universe on Large Scales</h4>
+										<p>Can we simulate OUR universe? For that we need not only the physical laws govering our Universe, but also the initial conditions (how everything looked like at the beginning of time). </p>
+									</header>
+
+	</body>
+</html>
