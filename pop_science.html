@@ -86,12 +86,29 @@
       display: none;
     }
 
+		/* Your desktop styles */
+    .desktop-content {
+        display: none; /* Hide desktop content by default */
+    }
+
+    /* Your mobile styles */
+    .mobile-content {
+        display: block; /* Show mobile content by default */
+    }
+
+    @media (min-width: 768px) {
+        /* Hide mobile content on screens larger than 768px */
+        .mobile-content {
+            display: none;
+        }
+
+        /* Show desktop content on screens larger than 768px */
+        .desktop-content {
+            display: block;
+        }
+    }
 
   	</style>
-
-
-
-
 
 	</head>
 	<body class="is-preload">
@@ -153,6 +170,9 @@
 								Wait wait wait! Before we dig deeper into current research efforts, let us equip ourselves with some neccessary tools, that is basic understanding of relevant physics:
 
 								<br></br>
+
+								<!-- Desktop content -->
+						    <div class="desktop-content">
 
 								<!-- Responsive Tabs -->
 								<div class="box-container">
@@ -283,11 +303,49 @@
 								    </div>
 								  </div>
 									</div>
+									</div>
 
+									<!-- Mobile content -->
+							    <div id="mobile_content" class="mobile-content">
+										<br>
 
-
+										<form>
+										<label for="physics-switch">
+												<span physics="tab1"><h2>Basic Physics</h2></span>
+												<span physics="tab2"><h2>Basic Physics</h2></span>
+										</label>
+										<select id="physics-switch">
+												<option value="tab1" selected>Speed of light</option>
+												<option value="tab2" >Spectrum</option>
+										</select>
+								</form>
+								<span physics="tab1">
+									<span class="larger-text">Imagine walking home on a late summer evening.</span> You start noticing the streetlights in the distance, roughly 100 meters away. Never before did you consider that you're actually witnessing the light source as it appeared 0.3 milliseconds ago. You're looking into the past! The reason for this fascinating phenomenon lies in one of the most fundamental principles of physics: <b>the constancy of the speed of light, which is approximately 299,792,458 meters per second</b>. Not only does this allow us to peer into the past, it also causes the relativity of time, as formulated within the theory of special relativity<sup class="superscript">1</sup>.
 
 									<br></br>
+										<a href="images/light_speed.png" data-lightbox="my-group" data-title="Time taken for light to travel various distances." data-show-toggle=False>
+										<span class="image">
+											<img src="images/light_speed.png" alt="" style="width: 30em;" />
+										</span>
+									</a>
+
+									<br></br>
+
+									While the above tiny lookback time may not impress you, let us consider some larger scales. Next to the horizon you see the moon, from which the reflected sunlight has travelled 1.3 seconds before reaching you, while the sunlight itself has travelled for an astonishing 8 minutes from the Sun (that long we would go unknowingly if the Sun was to abruptly stop emitting light). And it doesn't end there – light from the nearest (although too faint to be seen with the naked eye) star, Proxima Centauri, has traveled for 4.2465 years, and from our neighbor galaxy, Andromeda, a staggering 2.5 million years! In other words, we have no choice but to explore how the Universe looked like, not how it looks like today.
+
+									<!-- Footnote content -->
+									<p class="footnote-line"></p>
+									<p class="footnote" id="footnote1">1. Special relativity unveils a fascinating aspect of reality: the perception of time varies for observers (you, me or some alien) in relative motion. Even though the nearest star is 4.2465 light years away, if you would travel at 99 percent the speed of light you would get there in less than 8 months. According to an observer staying on Earth, this could be explained by time dilation (time runs slower for the space traveller), while the space crew would explain the short journey as a consequence of length contraction (the distance to the star was shorter for them).</p>
+								</span>
+								<span physics="tab2">
+									To be inserted...
+									<br></br>
+								</span>
+
+							Before moving on, did you check out all tabs? If not, <a style="color:blue;" href="#mobile_content" <p>go back to the "BASIC PHYSICS" menu</a>. If yes, let's move on! </p>
+
+							</div>
+
 									<h2>Learning the Universe</h2>
 
 									<h4>A brief history of cosmology in words and images</h4>
@@ -337,6 +395,40 @@
 							        }
 							});
 							</script>
+
+							<script>
+							$('[physics]').hide(); // hide all lang attributes on start.
+							$('[physics="tab1"]').show(); // show just En
+							$('#physics-switch').change(function () { // put onchange event when user select option from select
+							    var physics = $(this).val(); // decide which language to display using switch case. The rest is obvious (i think)
+							    switch (physics) {
+							        case 'tab1':
+							            $('[physics]').hide();
+							            $('[physics="tab1"]').show();
+							        break;
+							        case 'tab2':
+							            $('[physics]').hide();
+							            $('[physics="tab2"]').show();
+							        break;
+							        default:
+							            $('[physics]').hide();
+							            $('[physics="tab1"]').show();
+							        }
+							});
+							</script>
+
+							<script>
+					        // JavaScript to detect device type and toggle content
+					        var isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+
+					        if (isMobile) {
+					            document.querySelector('.mobile-content').style.display = 'block';
+					            document.querySelector('.desktop-content').style.display = 'none';
+					        } else {
+					            document.querySelector('.mobile-content').style.display = 'none';
+					            document.querySelector('.desktop-content').style.display = 'block';
+					        }
+					    </script>
 
 
 									</div>
