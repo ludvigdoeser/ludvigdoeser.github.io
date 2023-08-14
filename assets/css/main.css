@@ -106,7 +106,7 @@ input, select, textarea {
 		font-family: "Open Sans", Helvetica, sans-serif;
 		font-size: 15pt;
 		font-weight: 400;
-		letter-spacing: 0.075em;
+		letter-spacing: normal;
 		line-height: 1.65em;
 	}
 
@@ -1859,7 +1859,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #59634e; /* previously: 21b2a6 */; /* previously: 21b2a6 */;
 		}
 
 	select {
@@ -1956,7 +1956,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #59634e; /* previously: 21b2a6 */; /* previously: 21b2a6 */;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2114,6 +2114,7 @@ input, select, textarea {
 			margin: 0 0 2em 2em;
 			top: 0.25em;
 		}
+
 
 		.image.left, .image.right {
 			max-width: 40%;
@@ -2817,7 +2818,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #59634e; /* previously: 21b2a6 */
 			color: #c8ece9;
 		}
 
@@ -2871,7 +2872,7 @@ input, select, textarea {
 
 				.wrapper.style1 select option {
 					color: #ffffff;
-					background: #21b2a6;
+					background: #59634e; /* previously: 21b2a6 */; /* previously: 21b2a6 */;
 				}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -2887,7 +2888,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #21b2a6;
+				color: #59634e; /* previously: 21b2a6 */; /* previously: 21b2a6 */;
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
@@ -3351,7 +3352,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: #59634e; /* previously: 21b2a6 */; /* previously: 21b2a6 */;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;

@@ -6,27 +6,92 @@
 -->
 <html>
 	<head>
-		<title>News and Recommendations </title>
+		<title>Popular Science </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+		<!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<!-- Lightbox2 CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
 		<style>
     /* Additional styles for the box container */
     .box-container {
-      margin: 2 auto;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 20px;
+      margin: 1 auto;
+			font-size: 10pt;
+      /*  border: 1px solid #ccc; */
+      /* border-radius: 5px; */
+      padding-left: 80px;
+			padding-right: 80px;
+			padding-top: 60px;
+			padding-bottom: 60px;
 			background-color: #f7f7f7; /* New background color */ fffcf5
     }
 
 		.tab-button {
-		      background-color: #ffffff; /* New text color for tab buttons */ fff8e7
-		    }
+      background-color: #E6E6E6; /* New text color for tab buttons */ fff8e7
+			border: none;
+			outline: none;
+			margin-right: 10px;
+			padding-right: 50px;
+			padding-left: 50px;
+			font-size: small;
+    }
+
+		/* Styles for active tab button */
+    .tab-button.active {
+      background-color: #f7f7f7; /* Set the background color to match the page background */
+      color: #000; /* Set the text color when the button is active */
+    }
+
+		/* Superscript style */
+		.superscript {
+			vertical-align: super;
+			font-size: 10px;
+			margin-left: 2px;
+			margin-bottom: 0;
+			text-decoration: none;
+		}
+
+		/* Superscript style */
+		.footnote {
+			vertical-align: normal;
+			font-size: 10px;
+			margin-left: 2px;
+			padding-top: 10px;
+			line-height: normal;
+			text-decoration: none;
+		}
+
+		/* Line (rule) style */
+		.footnote-line {
+			position: relative;
+			bottom: -30px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: #888;
+		}
+
+		.larger-text {
+		  font-size: 24px; /* Adjust the font size as desired */
+		}
+
+		/* Hide the menu toggle bar elements */
+		.lb-dataContainer, {
+      display: none;
+    }
+
 
   	</style>
+
+
+
+
 
 	</head>
 	<body class="is-preload">
@@ -47,9 +112,6 @@
 											<li><a href="current_research.html">Current Research</a></li>
 											<li><a href="previous_research.html">Previous Research</a></li>
 											<li><a href="course_projects.html">Course Projects</a></li>
-                      <li><a href="news_and_recommendations.html">CNews and Recommendations</a></li>
-
-
 											<!-- <li><a href="#">Sign Up</a></li> -->
 											<!-- <li><a href="#">Log In</a></li> -->
 										</ul>
@@ -59,6 +121,7 @@
 						</nav>
 					</header>
 
+
 				<!-- Main -->
 					<article id="main">
 						<header>
@@ -67,15 +130,27 @@
 						<section class="wrapper style5">
 							<div class="inner">
 
-								AMAZING. You, a literate descendent of homo sapiens after millions years of evolution with a body consisting of atoms originally created in some star far far away, made it here! Welcome to (an attempt to) a popular science discription of what my research is all about.
-								<br></br>
+								<form>
+								<label for="lang-switch">
+										<span lang="en"><h2>Choose language &#127758;</h2></span>
+										<span lang="sv"><h2>Välj språk &#127758;</h2></span>
+								</label>
+								<select id="lang-switch">
+										<option value="en" selected>English</option>
+										<option value="sv" >Svenska</option>
+								</select>
+						</form>
+								<p>
+										<span lang="sv">FANTASTISK. Du, en läskunnig ättling till homo sapiens efter miljontals år av evolution med en kropp bestående av atomer som ursprungligen skapades i någon stjärna långt borta, tog dig hit! Välkommen till en populärvetenskaplig beskrivning av vad min forskning handlar om. Låt oss ta på oss våra fysikglasögon och observera världen från ett nytt perspektiv.</span>
+										<span lang="en">AMAZING. You, a literate descendent of homo sapiens after millions years of evolution with a body consisting of atoms originally created in some star far far away, made it here! Welcome to a popular science discription of what my research is all about. Let's take on our physics-glasses and observe the world around us from a new perspective.</span>
+								</p>
 
 								<header>
-									<h4>Cosmology</h4>
-									<p>The study of the universe as a whole—its origin, structure, evolution, and eventual fate...</p>
+									<h2>Cosmology</h2>
+									<p>The study of the Universe as a whole—its origin, structure, evolution, and eventual fate...</p>
 								</header>
 
-								How can we comprehend and map our Universe? Before we can touch upon that, we need some basic physics:
+								Wait wait wait! Before we dig deeper into current research efforts, let us equip ourselves with some neccessary tools, that is basic understanding of relevant physics:
 
 								<br></br>
 
@@ -84,97 +159,152 @@
 								  <div class="tabs-container">
 								    <!-- Tab navigation -->
 								    <div class="tab-buttons">
-								      <button class="tab-button" onclick="showTabContent(0)">Speed of Light</button>
-								      <button class="tab-button" onclick="showTabContent(1)">Light Spectrum</button>
-								      <button class="tab-button" onclick="showTabContent(2)">Einstein Gravity</button>
-								      <button class="tab-button" onclick="showTabContent(3)">Dark Universe</button>
+								      <button class="tab-button active" onclick="showTabContent(0)">Speed of Light</button>
+								      <button class="tab-button" onclick="showTabContent(1)">Spectrum</button>
+								      <button class="tab-button" onclick="showTabContent(2)">Redshift</button>
+											<button class="tab-button" onclick="showTabContent(3)">Gravity</button>
+
 								    </div>
 
 								    <!-- Tab content -->
 								    <div class="tab-content">
 								      <!-- Tab 1 content -->
 								      <div class="tab-item" id="tab1">
-								        <p> <br> Constant. </br> </p>
 
-												Consequence 1: See things as how they looked like in the past.  <br> </br>
+												<br>
 
-												<blockquote><span class="image right"><img src="images/speedoflight.jpg" alt="" /></span>
-												It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us... It takes 8 minutes (and 13 seconds) for the Sun to reach us...
-												</blockquote>
+												<a href="images/light_speed.png" data-lightbox="my-group" data-title="Time taken for light to travel various distances." data-show-toggle=False>
+											  <span class="image right">
+											    <img src="images/light_speed.png" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+											  </span>
+											</a>
 
-												Consequence 2: Time is not absolute, but depends on how fast you move (Einstein Special Relativity). Inertial system. Train example?
+												<span class="larger-text">Imagine walking home on a late summer evening.</span> You start noticing the streetlights in the distance, roughly 100 meters away. Never before did you consider that you're actually witnessing the light source as it appeared 0.3 milliseconds ago. You're looking into the past! The reason for this fascinating phenomenon lies in one of the most fundamental principles of physics: <b>the constancy of the speed of light, which is approximately 299,792,458 meters per second</b>. Not only does this allow us to peer into the past, it also causes the relativity of time, as formulated within the theory of special relativity<sup class="superscript">1</sup>.
 
+												<br></br>
+
+												While the above tiny lookback time may not impress you, let us consider some larger scales. Next to the horizon you see the moon, from which the reflected sunlight has travelled 1.3 seconds before reaching you, while the sunlight itself has travelled for an astonishing 8 minutes from the Sun (that long we would go unknowingly if the Sun was to abruptly stop emitting light). And it doesn't end there – light from the nearest (although too faint to be seen with the naked eye) star, Proxima Centauri, has traveled for 4.2465 years, and from our neighbor galaxy, Andromeda, a staggering 2.5 million years! In other words, we have no choice but to explore how the Universe looked like, not how it looks like today.
+
+												<!-- Footnote content -->
+												<p class="footnote-line"></p>
+										    <p class="footnote" id="footnote1">1. Special relativity unveils a fascinating aspect of reality: the perception of time varies for observers (you, me or some alien) in relative motion. Even though the nearest star is 4.2465 light years away, if you would travel at 99 percent the speed of light you would get there in less than 8 months. According to an observer staying on Earth, this could be explained by time dilation (time runs slower for the space traveller), while the space crew would explain the short journey as a consequence of length contraction (the distance to the star was shorter for them).</p>
 
 								      </div>
+
 								      <!-- Tab 2 content -->
 								      <div class="tab-item" id="tab2">
-								        <p> <br> Spectrum. </br> </p>
+								        <br>
 
-												Application 1: Observations in different wavebands
+												<a href="images/hubble_webb_emspectrum_cropped.jpeg" data-lightbox="my-group2" data-title="Cosmological redshift." data-show-toggle=False>
+											  <span class="image right">
+											    <img src="images/hubble_webb_emspectrum_cropped.jpeg" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+											  </span>
+											</a>
+
+												<span class="larger-text">Later that evening, you lose yourself in the night sky.</span> Once a casual observer of all those white dots, you now begin to note differences in intensity and that some intensities varies over time. Your gaze shifts toward a telescope on top of a distant hill, with which you could track these luminous properties across time. With such a powerful instrument you would not only be able to decipher the type of the astronomical object – star, galaxy, supernova, or perhaps even an exoplanet - but you'd also gain access to the true treasure embedded within the bright dots: the spectrum. In fact, beyond what your eyes can see lies an extraordinary electromagnetic spectrum, stretching from the gentle microwave and radio (low energies) to the infrared, visible, and UV, all the way to the energetic X-ray and gamma rays (high energies). Different parts of the spectrum tell different storys, which is why telescopes have different targets, see Fig 1.
+
+												<!-- perceive the wealth of information woven into the light from these distant sources.  capture your attention -->
+
 												<br></br>
-												Application 2: CMB temperature.
+												In cosmology, we're interested in determining distances. We do this by redshift measurements, which relies on studying the spectrum across numerous narrow energy bands. Remarkably, atomic physics at the microscopic level is vital to understand how we measure vast cosmic distances. All atoms, may it be hydrogen, oxygen or gold, can only emit light in certain discrete wavelengths. Consider the atomic model shown in the figure below in (a) where electrons whirl in orbit around a nucleus. When an electron absorbs energy and transitions to an outer shell, it can subsequently descend to an inner level, releasing light in the process. The wavelength of this emitted light depends on the element's characteristics – the number of orbits and their spacing. Each element therefore has a unique emission spectrum, as exemplified in (b). In a multi-element light source, on top of the spectral continuum from thermal motion, we can thus identify distinct peaks corresponding to specific emissions, in turn allowing us to discern the presence of a particular element as shown in (c). We can also identify elements that absorbed light along the way (seen as absorption lines).
 												<br></br>
-												Application 3: Look in narrow wavebands: Redshifts.
+
+												<a href="images/light_spectrum.png" data-lightbox="my-group2" data-title="Cosmological redshift." data-show-toggle=False>
+												<span class="image left">
+													<img src="images/light_spectrum.png" alt="" style="width: 65em"/>
+												</span>
+											 </a>
+
+											 <br></br>
+											 <br></br>
+											 <br></br>
+											 <br></br>
+
+
+
 
 
 								      </div>
+
 								      <!-- Tab 3 content -->
 								      <div class="tab-item" id="tab3">
-								        <p> <br> Spacetime dynamics. General Relativity. </br> </p>
 
-												Matter tells space how to curve, space tells matter how to move... Einsten equation. Equivalence principle: are you accelerating or free falling?
+												<a href="images/balloon_example.jpeg" data-lightbox="my-group" data-title="Cosmological redshift." data-show-toggle=False>
+											  <span class="image right">
+											    <img src="images/balloon_example.jpeg" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+											  </span>
+												</a>
+
+												<br>
+												<span class="larger-text">From your pocket, you bring up a black balloon.</span> You take a breath and inflate it. Before proceeding, you make a couple of white dots on the balloon surface with your marker pen. You decide that one of them represents our galaxy, while the others represent our neighboring galaxies. As you continue inflating, you watch all galaxies move further away from each other. No matter which galaxy you are in, you will experience all other galaxies moving away from you. In a similar fashion to the 2D balloon surface, but in 3D, our Universe is expanding and all galaxies (apart from a few in our neighborhood) are moving away from us. This revelation dates back to Edwin Hubble's groundbreaking work from 1929. By linking distance measures and redshifts, he unraveled the cosmos' expansion. This inquiry persists, converging on a value of roughly 70 km/s/Mpc. This means that each Mpc<sup class="superscript">1</sup> of space increases with 70 km every second.
+
+												<a href="images/redshift.png" data-lightbox="my-group" data-title="Cosmological redshift." data-show-toggle=False>
+											  <span class="image right">
+											    <img src="images/redshift.png" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+											  </span>
+												</a>
+
+												<br></br>
+												So, what exactly is redshift? We've grasped the art of discerning elemental compositions by analyzing emitted energy at different wavelengths. Yet, the lines in this spectrum can play a trick on us. As light voyages through our expanding Universe and the fabric of space itself stretches, the light's wavelengths also get stretched to longer wavelengths (lower energies). The magnitude of this shift, known as redshift, holds a cosmic secret: the farther a celestial body, the higher its redshift, reflecting the greater time span for expansion to stretch the light to longer wavelengths. In this way, redshift serves as a surrogate for the distance. If we are armed with an independent distance measurement, however, we enable redshift-distance examinations, which enables us to estimate the Universe's expansion rate (exactly what Hubble did).
+
+												<p class="footnote-line"></p>
+										    <p class="footnote" id="footnote1">1. Mpc (Mega Parsec) is a common distance unit in astronomy.</p>
+
+								      </div>
+
+											<!-- Tab 3 content -->
+								      <div class="tab-item" id="tab4">
+
+												<p> <br> Spacetime dynamics. General Relativity. </br> </p>
+
+												Matter tells space how to curve, space tells matter how to move... Einsten equation. Equivalence principle: are you accelerating or free falling? <p> <br> Spacetime dynamics. General Relativity. </br> </p>
+
+												Dark Energy: explains the accelerated expansion of our Universe.
+
 
 												<br></br>
 												Newtonian Gravity to Einstein.
 												<br></br>
 												Cosmological Simulations...
 
-								      </div>
-								      <!-- Tab 4 content -->
-								      <div class="tab-item" id="tab4">
-								        <p> <br> Not only is the Universe mostly empty, it is also very dark. By that, I mean it contains 95% of unknown matter/energy that does not interact with or emit light... </br> </p>
+												<p> <br> Not only is the Universe mostly empty, it is also very dark. By that, I mean it contains 95% of unknown matter/energy that does not interact with or emit light... </br> </p>
 
 												<br></br>
 												Dark Matter: the missing matter that is dark since it does not interact with photons (light).
 												<br></br>
 												Dark Energy: explains the accelerated expansion of our Universe.
 
+
+
 								      </div>
+
+
+
 								    </div>
 								  </div>
 									</div>
 
-								  <!-- JavaScript to handle tab switching -->
-								  <script>
-								    // Show only the content of the first tab on page load
-								    document.addEventListener('DOMContentLoaded', function() {
-								      showTabContent(0);
-								    });
 
-								    function showTabContent(tabIndex) {
-								      // Hide all tab content
-								      const tabItems = document.querySelectorAll('.tab-item');
-								      tabItems.forEach(item => item.style.display = 'none');
 
-								      // Show the selected tab content
-								      const selectedTab = document.getElementById(`tab${tabIndex + 1}`);
-								      selectedTab.style.display = 'block';
-								    }
-								  </script>
 
 									<br></br>
-									Now, with some physics in our tool box, let us traverse the history of cosmology:
+									<h2>Learning the Universe</h2>
+
+									<h4>A brief history of cosmology in words and images</h4>
+
+									Our journey to understand the Universe began by observations of the night sky by eye, leading to ideas like Earth being the center (geocentric) and then the Sun (heliocentric). Newtonian mechanics provided a crucial framework for understanding celestial motion, but Edwin Hubble's monumental discovery of the expanding Universe in the 1920s changed everything. His observations revealed a Universe filled with countless galaxies, extending far beyond our own. Great debate?
+
 									<br></br>
 
-									<header>
-										<h4>Hubble's Discovery of an expanding Universe</h4>
-										<p>Everything is receding away from us (baloon analogy)...</p>
-									</header>
+									In the cosmic orchestra of light, one melody stands out as the key to unlocking the secrets of our Universe: the cosmic microwave background (CMB). Discovered accidentally in 1965 by Arno Penzias and Robert Wilson, this faint radiation in the microwave waveband fills the entire sky. The CMB is a relic from the early days of the Universe, when it transitioned from a hot, dense state to a cooler, expanding cosmos. It measures at a chilly 2.7 Kelvin corresponding to -270.45 degrees Celsius (yes, thanks to the shape of the light spectrum from this black-body radiation we can actually compute its temperature) in all directions across the sky, with only very slight variations (anisotropies). Since these regions are too far apart to have ever been in causal contact during the finite age of the universe, their similarity in temperature poses an intriguing puzzle. The conclusion was that they share a common origin - the primordial event that birthed our universe - thus solidifying the Big Bang as the most compelling theory for the origin and evolution of the cosmos.
 
-									<header>
-										<h4>Cosmic Microwave Background and the Big Bang</h4>
-										<p>If everything is moving away from us, everything should have been closer in the past... BIG BANG... </p>
-									</header>
+									<br></br>
+
+									Accelerated expansion...
+
+									The accidental detection of the cosmic microwave background (CMB) in 1965 further solidified the concept of the Big Bang Theory. With remarkable advancements in observational astronomy and technology, we have meticulously mapped millions of galaxies across the night sky.
+
+									<br></br>
 
 									<header>
 										<h4>Mapping the Universe with Multi-Billion Dollar Surveys</h4>
@@ -185,6 +315,88 @@
 										<h4>Digital Twin of the Universe on Large Scales</h4>
 										<p>Can we simulate OUR universe? For that we need not only the physical laws govering our Universe, but also the initial conditions (how everything looked like at the beginning of time). </p>
 									</header>
+
+							<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+							<script>
+							$('[lang]').hide(); // hide all lang attributes on start.
+							$('[lang="en"]').show(); // show just En
+							$('#lang-switch').change(function () { // put onchange event when user select option from select
+							    var lang = $(this).val(); // decide which language to display using switch case. The rest is obvious (i think)
+							    switch (lang) {
+							        case 'en':
+							            $('[lang]').hide();
+							            $('[lang="en"]').show();
+							        break;
+							        case 'sv':
+							            $('[lang]').hide();
+							            $('[lang="sv"]').show();
+							        break;
+							        default:
+							            $('[lang]').hide();
+							            $('[lang="en"]').show();
+							        }
+							});
+							</script>
+
+
+									</div>
+
+									<!-- Lightbox JavaScript -->
+									<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+								  <!-- JavaScript to handle tab switching -->
+									<script>
+									document.addEventListener('DOMContentLoaded', function() {
+									  // Hide content of all tabs except for tab 0
+									  const tabItems = document.querySelectorAll('.tab-item');
+									  for (let i = 1; i < tabItems.length; i++) {
+									    tabItems[i].style.display = 'none';
+									  }
+									});
+
+							    // Rest of your JavaScript code here
+									function showTabContent(tabIndex) {
+							      // Hide all tab content
+										const tabItems = document.querySelectorAll('.tab-item');
+      							tabItems.forEach(item => item.style.display = 'none');
+
+							      // Show the selected tab content
+							      const selectedTab = document.getElementById(`tab${tabIndex + 1}`);
+							      selectedTab.style.display = 'block';
+
+							      // Add 'active' class to the selected tab button
+							      const tabButtons = document.querySelectorAll('.tab-button');
+							      tabButtons.forEach(button => button.classList.remove('active'));
+							      tabButtons[tabIndex].classList.add('active');
+							    }
+
+								  </script>
+
+									<!-- Footer -->
+										<footer id="footer">
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+												<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+											</ul>
+											<ul class="copyright">
+												<li>&copy; Ludvig Doeser 2021</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+											</ul>
+										</footer>
+
+								</div>
+
+							<!-- Scripts -->
+								<script src="assets/js/jquery.min.js"></script>
+								<script src="assets/js/jquery.scrollex.min.js"></script>
+								<script src="assets/js/jquery.scrolly.min.js"></script>
+								<script src="assets/js/browser.min.js"></script>
+								<script src="assets/js/breakpoints.min.js"></script>
+								<script src="assets/js/util.js"></script>
+								<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
