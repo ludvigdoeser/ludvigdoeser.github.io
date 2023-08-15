@@ -12,6 +12,13 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+		<!-- Include Splide.js CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/css/splide.min.css">
+
+    <!-- Include Splide.js and Splide.js Touch JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
+
+
 		<!-- jQuery -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -108,6 +115,60 @@
         }
     }
 
+		/* Basic styling for slider container */
+        .splide {
+            width: 80%; /* Adjust the width as needed */
+            margin: 0 auto;
+        }
+
+        /* Styling for pagination dots container */
+        .splide__pagination-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Styling for pagination dots */
+        .splide__pagination li {
+            width: 20px; /* Adjust the width to make the dots larger */
+            height: 20px; /* Adjust the height to make the dots larger */
+            margin: 0 5px; /* Adjust spacing between dots */
+						background-color: rgba(0, 0, 0, 0);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .splide__pagination li.is-active {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+				/* Force a fixed height for the images */
+        .splide__slide {
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+            position: relative;
+        }
+
+        .splide__slide img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+				/* Styling for the text bar */
+        .splide__text-bar {
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            width: 100%;
+            background-color: #ffffff;
+						opacity: 70%;
+            color: black;
+            padding: 10px;
+						padding-bottom: 30px;
+						font-size: 12px; /* Adjust the font size as needed */
+        }
   	</style>
 
 	</head>
@@ -303,6 +364,7 @@
 								    </div>
 								  </div>
 									</div>
+									<br></br>
 									</div>
 
 									<!-- Mobile content -->
@@ -349,6 +411,34 @@
 									<h2>Learning the Universe</h2>
 
 									<h4>A brief history of cosmology in words and images</h4>
+
+									<!-- Slider HTML -->
+									<div class="splide">
+											<div class="splide__track">
+													<ul class="splide__list">
+															<li class="splide__slide">
+																	<img src="images/hubble1929.png" alt="Image 1">
+																	<div class="splide__text-bar"><strong>Hubble 1929.</strong> testing testing...</div>
+															</li>
+															<li class="splide__slide">
+																	<img src="images/startrail_small.png" alt="Image 2">
+																	<div class="splide__text-bar">Text for Image 2</div>
+															</li>
+															<li class="splide__slide">
+																	<img src="images/startrail_small.png" alt="Image 3">
+																	<div class="splide__text-bar">Text for Image 3</div>
+															</li>
+															<li class="splide__slide">
+																	<img src="images/startrail_small.png" alt="Image 4">
+																	<div class="splide__text-bar">Text for Image 4</div>
+															</li>
+													</ul>
+											</div>
+									</div>
+
+									<div class="splide__pagination-container">
+											<div class="splide__pagination"></div>
+									</div>
 
 									Our journey to understand the Universe began by observations of the night sky by eye, leading to ideas like Earth being the center (geocentric) and then the Sun (heliocentric). Newtonian mechanics provided a crucial framework for understanding celestial motion, but Edwin Hubble's monumental discovery of the expanding Universe in the 1920s changed everything. His observations revealed a Universe filled with countless galaxies, extending far beyond our own. Great debate?
 
@@ -464,6 +554,20 @@
 							    }
 
 								  </script>
+
+									<script>
+							        document.addEventListener("DOMContentLoaded", function() {
+							            new Splide('.splide', {
+							                type: 'slide',
+							                perPage: 1,  // Display one slide at a time
+							                rewind: true,
+							                arrows: true,
+							                pagination: true, // Show pagination dots
+							                focus: 'center',
+															cover: true, // Use the cover animation to hide the previous slide
+							            }).mount();
+							        });
+							    </script>
 
 									<!-- Footer -->
 										<footer id="footer">
