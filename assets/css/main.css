@@ -4023,59 +4023,148 @@ input, select, textarea {
 }
 
 /* Basic styling for slider container */
-		.splide {
-				width: 80%; /* Adjust the width as needed */
-				margin: 0 auto;
-		}
+	.splide {
+			width: 80%; /* Adjust the width as needed */
+			margin: 0 auto;
+	}
 
-		/* Styling for pagination dots container */
-		.splide__pagination-container {
-				text-align: center;
-				margin-top: 30px;
-		}
+	/* Styling for pagination dots container */
+	.splide__pagination-container {
+			text-align: center;
+			margin-top: 30px;
+	}
 
-		/* Styling for pagination dots */
-		.splide__pagination li {
-				width: 20px; /* Adjust the width to make the dots larger */
-				height: 20px; /* Adjust the height to make the dots larger */
-				margin: 0 5px; /* Adjust spacing between dots */
-				background-color: rgba(0, 0, 0, 0);
-				border-radius: 50%;
-				transition: background-color 0.3s;
-				cursor: pointer;
-				display: inline-block;
-		}
+	/* Styling for pagination dots */
+	.splide__pagination li {
+			width: 20px; /* Adjust the width to make the dots larger */
+			height: 20px; /* Adjust the height to make the dots larger */
+			margin: 0 5px; /* Adjust spacing between dots */
+			background-color: rgba(0, 0, 0, 0);
+			border-radius: 50%;
+			transition: background-color 0.3s;
+			cursor: pointer;
+			display: inline-block;
+	}
 
-		.splide__pagination li.is-active {
-				background-color: rgba(0, 0, 0, 0.9);
-		}
+	.splide__pagination li.is-active {
+			background-color: rgba(0, 0, 0, 0.9);
+	}
 
-		/* Force a fixed height for the images */
-		.splide__slide {
-				padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
-				position: relative;
-		}
+	/* Force a fixed height for the images */
+	.splide__slide {
+			padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+			position: relative;
+	}
 
-		.splide__slide img {
-				position: absolute;
-				width: 98%;
-				height: 100%;
-				object-fit: cover;
-		}
+	.splide__slide img {
+			position: absolute;
+			width: 98%;
+			height: 100%;
+			object-fit: cover;
+	}
 
-		/* Styling for the text bar */
-		.splide__text-bar {
-				position: absolute;
-				bottom: 0%;
-				left: 0%;
-				width: 100%;
-				background-color: #ffffff;
-				opacity: 90%;
-				color: black;
-				padding: 10px;
-				padding-bottom: 30px;
-				padding-right: 20px;
-				padding-left: 20px;
-				font-size: 12px; /* Adjust the font size as needed */
-				line-height: 1.5; /* Adjust the line-height for less vertical spacing between text lines */
-		}
+	/* Styling for the text bar */
+	.splide__text-bar {
+			position: absolute;
+			bottom: 0%;
+			left: 0%;
+			width: 100%;
+			background-color: #ffffff;
+			opacity: 90%;
+			color: black;
+			padding: 10px;
+			padding-bottom: 30px;
+			padding-right: 20px;
+			padding-left: 20px;
+			font-size: 12px; /* Adjust the font size as needed */
+			line-height: 1.5; /* Adjust the line-height for less vertical spacing between text lines */
+	}
+
+	/* Additional styles for the box container */
+  .box-container {
+    margin: 1 auto;
+		font-size: 10pt;
+    /*  border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    padding-left: 80px;
+		padding-right: 80px;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		background-color: #f7f7f7; /* New background color */ fffcf5
+  }
+
+	.tab-button {
+    background-color: #E6E6E6; /* New text color for tab buttons */ fff8e7
+		border: none;
+		outline: none;
+		margin-right: 10px;
+		padding-right: 30px;
+		padding-left: 30px;
+		font-size: small;
+  }
+
+	/* Styles for active tab button */
+  .tab-button.active {
+    background-color: #f7f7f7; /* Set the background color to match the page background */
+    color: #000; /* Set the text color when the button is active */
+  }
+
+	/* Superscript style */
+	.superscript {
+		vertical-align: super;
+		font-size: 10px;
+		margin-left: 2px;
+		margin-bottom: 0;
+		text-decoration: none;
+	}
+
+	/* Superscript style */
+	.footnote {
+		vertical-align: normal;
+		font-size: 10px;
+		margin-left: 2px;
+		padding-top: 10px;
+		line-height: normal;
+		text-decoration: none;
+	}
+
+	/* Line (rule) style */
+	.footnote-line {
+		position: relative;
+		bottom: -30px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: #888;
+	}
+
+	.larger-text {
+	  font-size: 24px; /* Adjust the font size as desired */
+	}
+
+	/* Hide the menu toggle bar elements */
+	.lb-dataContainer, {
+    display: none;
+  }
+
+	/* Your desktop styles */
+  .desktop-content {
+      display: none; /* Hide desktop content by default */
+  }
+
+  /* Your mobile styles */
+  .mobile-content {
+      display: block; /* Show mobile content by default */
+  }
+
+  @media (min-width: 768px) {
+      /* Hide mobile content on screens larger than 768px */
+      .mobile-content {
+          display: none;
+      }
+
+      /* Show desktop content on screens larger than 768px */
+      .desktop-content {
+          display: block;
+      }
+  }
