@@ -25,6 +25,14 @@
 		<!-- Lightbox2 CSS -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
+		<!-- MATH -->
+		<script type="text/javascript"
+		  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+
 		<style>
     /* Additional styles for the box container */
     .box-container {
@@ -44,8 +52,8 @@
 			border: none;
 			outline: none;
 			margin-right: 10px;
-			padding-right: 50px;
-			padding-left: 50px;
+			padding-right: 30px;
+			padding-left: 30px;
 			font-size: small;
     }
 
@@ -115,60 +123,7 @@
         }
     }
 
-		/* Basic styling for slider container */
-        .splide {
-            width: 80%; /* Adjust the width as needed */
-            margin: 0 auto;
-        }
 
-        /* Styling for pagination dots container */
-        .splide__pagination-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        /* Styling for pagination dots */
-        .splide__pagination li {
-            width: 20px; /* Adjust the width to make the dots larger */
-            height: 20px; /* Adjust the height to make the dots larger */
-            margin: 0 5px; /* Adjust spacing between dots */
-						background-color: rgba(0, 0, 0, 0);
-            border-radius: 50%;
-            transition: background-color 0.3s;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .splide__pagination li.is-active {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-				/* Force a fixed height for the images */
-        .splide__slide {
-            padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
-            position: relative;
-        }
-
-        .splide__slide img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-				/* Styling for the text bar */
-        .splide__text-bar {
-            position: absolute;
-            bottom: 0%;
-            left: 0%;
-            width: 100%;
-            background-color: #ffffff;
-						opacity: 70%;
-            color: black;
-            padding: 10px;
-						padding-bottom: 30px;
-						font-size: 12px; /* Adjust the font size as needed */
-        }
   	</style>
 
 	</head>
@@ -190,6 +145,8 @@
 											<li><a href="current_research.html">Current Research</a></li>
 											<li><a href="previous_research.html">Previous Research</a></li>
 											<li><a href="course_projects.html">Course Projects</a></li>
+											<li><a href="news_and_recommendations.html">News and Recommendations</a></li>
+											<li><a href="pop_science.html">Popular Science</a></li>
 											<!-- <li><a href="#">Sign Up</a></li> -->
 											<!-- <li><a href="#">Log In</a></li> -->
 										</ul>
@@ -242,8 +199,9 @@
 								    <div class="tab-buttons">
 								      <button class="tab-button active" onclick="showTabContent(0)">Speed of Light</button>
 								      <button class="tab-button" onclick="showTabContent(1)">Spectrum</button>
-								      <button class="tab-button" onclick="showTabContent(2)">Redshift</button>
-											<button class="tab-button" onclick="showTabContent(3)">Gravity</button>
+								      <button class="tab-button" onclick="showTabContent(2)">Emission</button>
+											<button class="tab-button" onclick="showTabContent(3)">Redshift</button>
+											<button class="tab-button" onclick="showTabContent(4)">Gravity</button>
 
 								    </div>
 
@@ -254,9 +212,9 @@
 
 												<br>
 
-												<a href="images/light_speed.png" data-lightbox="my-group" data-title="Time taken for light to travel various distances." data-show-toggle=False>
+												<a href="images/lightspeed.png" data-lightbox="tab1" data-title="Time taken for light to travel various distances." data-show-toggle=False>
 											  <span class="image right">
-											    <img src="images/light_speed.png" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+											    <img src="images/lightspeed.png" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
 											  </span>
 											</a>
 
@@ -276,87 +234,105 @@
 								      <div class="tab-item" id="tab2">
 								        <br>
 
-												<a href="images/hubble_webb_emspectrum_cropped.jpeg" data-lightbox="my-group2" data-title="Cosmological redshift." data-show-toggle=False>
-											  <span class="image right">
-											    <img src="images/hubble_webb_emspectrum_cropped.jpeg" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+												<span class="larger-text">Later that evening, you lose yourself in the night sky.</span> Once a casual observer of all those white dots, you now begin to note differences in intensity and that some intensities varies over time. Your gaze shifts toward a telescope on top of a distant hill, with which you could track these luminous properties across time. With such a powerful instrument you would not only be able to decipher the type of the astronomical object – star, galaxy, supernova, or perhaps even an exoplanet - but you'd also gain access to the true treasure embedded within the bright dots: the spectrum. In fact, beyond what your eyes can see lies an extraordinary electromagnetic spectrum, stretching from the gentle microwave and radio (low energies) to the infrared, visible, and UV, all the way to the energetic X-ray and gamma rays (high energies). Different parts of the spectrum tell different storys, which is why telescopes have different targets. For example, some space telescopes like Hubble, Spitzer and Webb all have different targets (Image credit: NASA, Joseph Olmsted (STScI)).
+
+												<br></br>
+
+												<a href="images/hubble_webb_spectrum.png" data-lightbox="tab2" data-title="The spectrum of electromagnetic energy, specifically highlighting the portions detected by NASA’s Hubble, Spitzer, and Webb space telescopes. The portion of the spectrum labeled “visible,” with the colors of the rainbow, is what humans detect as visible light. Image credit: NASA, Joseph Olmsted (STScI)." data-show-toggle=False>
+											  <span class="image left">
+											    <img src="images/hubble_webb_spectrum.png" alt="" style="width: 60em; padding-left: 5em"/>
 											  </span>
 											</a>
 
-												<span class="larger-text">Later that evening, you lose yourself in the night sky.</span> Once a casual observer of all those white dots, you now begin to note differences in intensity and that some intensities varies over time. Your gaze shifts toward a telescope on top of a distant hill, with which you could track these luminous properties across time. With such a powerful instrument you would not only be able to decipher the type of the astronomical object – star, galaxy, supernova, or perhaps even an exoplanet - but you'd also gain access to the true treasure embedded within the bright dots: the spectrum. In fact, beyond what your eyes can see lies an extraordinary electromagnetic spectrum, stretching from the gentle microwave and radio (low energies) to the infrared, visible, and UV, all the way to the energetic X-ray and gamma rays (high energies). Different parts of the spectrum tell different storys, which is why telescopes have different targets, see Fig 1.
-
-												<!-- perceive the wealth of information woven into the light from these distant sources.  capture your attention -->
-
-												<br></br>
-												In cosmology, we're interested in determining distances. We do this by redshift measurements, which relies on studying the spectrum across numerous narrow energy bands. Remarkably, atomic physics at the microscopic level is vital to understand how we measure vast cosmic distances. All atoms, may it be hydrogen, oxygen or gold, can only emit light in certain discrete wavelengths. Consider the atomic model shown in the figure below in (a) where electrons whirl in orbit around a nucleus. When an electron absorbs energy and transitions to an outer shell, it can subsequently descend to an inner level, releasing light in the process. The wavelength of this emitted light depends on the element's characteristics – the number of orbits and their spacing. Each element therefore has a unique emission spectrum, as exemplified in (b). In a multi-element light source, on top of the spectral continuum from thermal motion, we can thus identify distinct peaks corresponding to specific emissions, in turn allowing us to discern the presence of a particular element as shown in (c). We can also identify elements that absorbed light along the way (seen as absorption lines).
-												<br></br>
-
-												<a href="images/light_spectrum.png" data-lightbox="my-group2" data-title="Cosmological redshift." data-show-toggle=False>
-												<span class="image left">
-													<img src="images/light_spectrum.png" alt="" style="width: 65em"/>
-												</span>
-											 </a>
-
-											 <br></br>
-											 <br></br>
-											 <br></br>
-											 <br></br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
 
 
-
-
+											<!-- : https://webbtelescope.org/contents/media/images/4188-Image -->
 
 								      </div>
 
 								      <!-- Tab 3 content -->
 								      <div class="tab-item" id="tab3">
 
-												<a href="images/balloon_example.jpeg" data-lightbox="my-group" data-title="Cosmological redshift." data-show-toggle=False>
-											  <span class="image right">
-											    <img src="images/balloon_example.jpeg" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
-											  </span>
-												</a>
+
 
 												<br>
-												<span class="larger-text">From your pocket, you bring up a black balloon.</span> You take a breath and inflate it. Before proceeding, you make a couple of white dots on the balloon surface with your marker pen. You decide that one of them represents our galaxy, while the others represent our neighboring galaxies. As you continue inflating, you watch all galaxies move further away from each other. No matter which galaxy you are in, you will experience all other galaxies moving away from you. In a similar fashion to the 2D balloon surface, but in 3D, our Universe is expanding and all galaxies (apart from a few in our neighborhood) are moving away from us. This revelation dates back to Edwin Hubble's groundbreaking work from 1929. By linking distance measures and redshifts, he unraveled the cosmos' expansion. This inquiry persists, converging on a value of roughly 70 km/s/Mpc. This means that each Mpc<sup class="superscript">1</sup> of space increases with 70 km every second.
+												<span class="larger-text">Having walked up to the telescope</span>, you start to wonder how we measure distances to all these distant light sources. You see a poster and read: "In cosmology we measure distances by redshift measurements, which relies on studying the spectrum across numerous narrow energy bands. Remarkably, atomic physics at the microscopic level is vital to understand how we measure vast cosmic distances. All atoms, may it be hydrogen, oxygen or gold, can only emit light in certain discrete wavelengths. Consider the atomic model shown in the figure below in (a) where electrons whirl in orbit around a nucleus. When an electron absorbs energy and transitions to an outer shell, it can subsequently descend to an inner level, releasing light in the process. The wavelength of this emitted light depends on the element's characteristics – the number of orbits and their spacing. Each element therefore has a unique emission spectrum, as exemplified in (b). In a multi-element light source, on top of the spectral continuum from thermal motion, we can thus identify distinct peaks corresponding to specific emissions, in turn allowing us to discern the presence of a particular element as shown in (c). We can also identify elements that absorbed light along the way (seen as absorption lines; the dips)."
 
-												<a href="images/redshift.png" data-lightbox="my-group" data-title="Cosmological redshift." data-show-toggle=False>
-											  <span class="image right">
-											    <img src="images/redshift.png" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
-											  </span>
-												</a>
+												<br><br>
+												<a href="images/emission_illustration.png" data-lightbox="tab3" data-title="Light emssion at atomic level. (a) a hydrogen atom with the H-alpha and H-beta emissions shown in red and cyan, repsectively. (b) Unique emission spectra from different elements, here hydrogen (with H-alpha and H-beta marked) and helium. (c) a continuum spectra showing emission spectra from various elements, such as the ones from hydrogen. Figure taken from Tovmassian, H. M. et al (2005)." data-show-toggle=False>
+												<span class="image left">
+													<img src="images/emission_illustration.png" alt="" style="width: 65em"/>
+												</span>
+											 </a>
+											 <!--- <a href="https://ui.adsabs.harvard.edu/abs/2005RMxAA..41....3T/abstract"></a>. -->
 
-												<br></br>
-												So, what exactly is redshift? We've grasped the art of discerning elemental compositions by analyzing emitted energy at different wavelengths. Yet, the lines in this spectrum can play a trick on us. As light voyages through our expanding Universe and the fabric of space itself stretches, the light's wavelengths also get stretched to longer wavelengths (lower energies). The magnitude of this shift, known as redshift, holds a cosmic secret: the farther a celestial body, the higher its redshift, reflecting the greater time span for expansion to stretch the light to longer wavelengths. In this way, redshift serves as a surrogate for the distance. If we are armed with an independent distance measurement, however, we enable redshift-distance examinations, which enables us to estimate the Universe's expansion rate (exactly what Hubble did).
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
+											 <br>
 
-												<p class="footnote-line"></p>
-										    <p class="footnote" id="footnote1">1. Mpc (Mega Parsec) is a common distance unit in astronomy.</p>
+
 
 								      </div>
 
 											<!-- Tab 3 content -->
 								      <div class="tab-item" id="tab4">
 
-												<p> <br> Spacetime dynamics. General Relativity. </br> </p>
+												<a href="images/balloon.png" data-lightbox="tab4" data-title="Cosmic expansion illustrated with the 2D surface of a balloon. As the balloon is inflated, all galaxies recede from each other. Note, the galaxy image was captured by me in 2020 during a course at University of Texas at Austin with a telescope at McDonald's Observatory." data-show-toggle=False>
+											  <span class="image right">
+											    <img src="images/balloon.png" alt="" style="width: 35em; padding-right: 10em;  padding-left: 3em; padding-top:2em" />
+											  </span>
+												</a>
 
-												Matter tells space how to curve, space tells matter how to move... Einsten equation. Equivalence principle: are you accelerating or free falling? <p> <br> Spacetime dynamics. General Relativity. </br> </p>
+												<br>
+												<span class="larger-text">From your pocket, you bring up a black balloon.</span> You take a breath and inflate it. Before proceeding, you draw three galaxies on the balloon surface. You decide that one of them represents our galaxy, while the others represent our neighboring galaxies. As you continue inflating, you watch all galaxies move further away from each other. No matter which galaxy you are in, you will experience all other galaxies moving away from you. In a similar fashion to the 2D balloon surface, but in 3D, our Universe is expanding and all galaxies (apart from a few in our neighborhood) are moving away from us. This revelation dates back to Edwin Hubble's groundbreaking work from 1929. By linking distance measures and velocities, he unraveled the cosmos' expansion. This inquiry persists, converging on a value of roughly 70 km/s/Mpc. This means that each Mpc<sup class="superscript">1</sup> of space increases with 70 km every second.
+												<br></br>
 
-												Dark Energy: explains the accelerated expansion of our Universe.
+												<a href="images/redshift_illustration.png" data-lightbox="tab4" data-title="Cosmological redshift." data-show-toggle=False>
+											  <span class="image right">
+											    <img src="images/redshift_illustration.png" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+											  </span>
+												</a>
 
+
+												So, what exactly is redshift? We've grasped the art of discerning elemental compositions by analyzing emitted energy at different wavelengths. Yet, the lines in this spectrum can play a trick on us. As light voyages through our expanding Universe and the fabric of space itself stretches, the light's wavelengths also get stretched to longer wavelengths (lower energies). The magnitude of this shift, known as redshift, holds a cosmic secret: the farther a celestial body, the higher its redshift, reflecting the greater time span for expansion to stretch the light to longer wavelengths. In this way, redshift serves as a surrogate for the distance. If we are armed with an independent distance measurement, we enable redshift-distance examinations, which enables us to estimate the Universe's expansion rate (exactly what Hubble did).
+
+												<p class="footnote-line"></p>
+										    <p class="footnote" id="footnote1">1. Mpc (mega parsec) is a common distance unit in astronomy. It corresponds to 1 million <a href="https://en.wikipedia.org/wiki/Parsec">parsec</a>, each parsec being 3.26 light years.</p>
+
+								      </div>
+
+											<!-- Tab 3 content -->
+								      <div class="tab-item" id="tab5">
+												<br>
+
+												<a href="images/GR_sun.jpeg" data-lightbox="my-group2" data-title="Gravity can bend light, leading to phenomena like gravitational lensing, where objects, such as stars behind the Sun, appear to be in positions different from their actual locations due to the Sun's gravitational influence on the path of light." data-show-toggle=False>
+											  <span class="image right">
+											    <img src="images/GR_sun.jpeg" alt="" style="width: 29em; margin-left: 2em; padding-right: 5em; padding-left:1em" />
+											  </span>
+											</a>
+
+												<span class="larger-text">By now, it's already morning and you see the sun rising.</span> You stand still, as you know you will soon experience a total solar eclipse, where the moon blocks the sunlight to the degree that stars near the sun can be seen. In fact, such stars can appear to be in positions different from their actual locations due to the Sun's gravitational influence on the path of light. You remember that Sir Artur Eddington did exactly this in 1919 to prove the spacetime dynamics as described by Albert Einstein's General Theory of Relativity from 1915. In this framework, matter informs the very fabric of spacetime how to curve, while spacetime, in turn, guides the motion of matter through the famous Einstein field equations: $\displaystyle G_{\mu \nu }+\Lambda g_{\mu \nu }=\kappa T_{\mu \nu}$. This more comprehensive theory of gravity could account for everything from the bending of light around massive objects to the dynamics of the expanding Universe.
 
 												<br></br>
-												Newtonian Gravity to Einstein.
-												<br></br>
-												Cosmological Simulations...
-
-												<p> <br> Not only is the Universe mostly empty, it is also very dark. By that, I mean it contains 95% of unknown matter/energy that does not interact with or emit light... </br> </p>
-
-												<br></br>
-												Dark Matter: the missing matter that is dark since it does not interact with photons (light).
-												<br></br>
-												Dark Energy: explains the accelerated expansion of our Universe.
-
-
-
+												However, while the Universe may appear full of matter in form of stars and galaxies, it's actually predominantly empty and extraordinarily dark. In fact, a staggering 95% of its content consists of mysterious matter and energy that neither interacts with nor emits light. This enigmatic duo comprises Dark Matter, the elusive, unseen matter responsible for holding galaxies together, and Dark Energy, the force behind the Universe's accelerated expansion. The quest to understand the nature of these dark components remains one of the most significant challenges in modern astrophysics and cosmology, driving us to explore the cosmos through advanced techniques like cosmological simulations. These simulations, which have benefited from the exponential growth in computational capabilities and our deepening understanding of astrophysical processes, enable us to rigorously test fundamental laws of physics. They will continue to shed light on the evolution of the Universe over billions of years and contribute to our ever-deepening understanding of the past, present, and future on a grand cosmic scale.
 								      </div>
 
 
@@ -413,16 +389,26 @@
 									<h4>A brief history of cosmology in words and images</h4>
 
 									<!-- Slider HTML -->
-									<div class="splide">
-											<div class="splide__track">
-													<ul class="splide__list">
+									<div class="splide" id="slider-1">
+											<div class="splide__track" id="track-1">
+													<ul class="splide__list" id ="list-1">
 															<li class="splide__slide">
 																	<img src="images/hubble1929.png" alt="Image 1">
-																	<div class="splide__text-bar"><strong>Hubble 1929.</strong> testing testing...</div>
+																	<div class="splide__text-bar"><strong>The Velocity-Distance Relation among Extra-Galactic Nebulae <a href="https://ui.adsabs.harvard.edu/abs/1929PNAS...15..168H/abstract">(Hubble, 1929)</a>.</strong> Each dot in the velocity-distance figure represents a galaxy. This Hubble diagram visually displays the correlation between the receding velocity of a galaxy and their distances from Earth. It provides crucial evidence for the expansion of the Universe, where galaxies farther from us exhibit greater recession velocities.  </div>
+
 															</li>
 															<li class="splide__slide">
-																	<img src="images/startrail_small.png" alt="Image 2">
-																	<div class="splide__text-bar">Text for Image 2</div>
+																	<img src="images/hubble1931.png" alt="Image 2">
+																	<div class="splide__text-bar"><strong>The Velocity-Distance Relation refined in <a href="https://ui.adsabs.harvard.edu/abs/1931ApJ....74...43H/abstract">(Hubble, E. & Humason, M.L., 1931).</a></strong> The dots near the origin represent individual nebulae, which, together with the groups indicated by the lowest two circles, were used in the first formulation of the velocity-distance relation in 1929. </div>
+
+															</li>
+															<li class="splide__slide">
+																	<img src="images/cmb.png" alt="Image 3">
+																	<div class="splide__text-bar"><strong>Cosmic Microwave Background Anisotropies.</strong> Temperature fluctuations measured in the CMB radiation using COBE-WMAP-Planck satellites, as shown in Fig 1 in <a href="https://arxiv.org/pdf/1810.09934.pdf">(Vazquez, J. A. et al, 2021)</a>. Photons  distributed over the full sky have nearly the same temperature $T_0 = 2.7255$ K plus small fluctuations (about one part in one hundred thousand). </div>
+
+															<!-- "Inflationary Cosmology: From Theory to Observations" -->
+
+															<!--
 															</li>
 															<li class="splide__slide">
 																	<img src="images/startrail_small.png" alt="Image 3">
@@ -432,37 +418,96 @@
 																	<img src="images/startrail_small.png" alt="Image 4">
 																	<div class="splide__text-bar">Text for Image 4</div>
 															</li>
+															-->
 													</ul>
 											</div>
 									</div>
 
 									<div class="splide__pagination-container">
-											<div class="splide__pagination"></div>
+											<div class="splide__pagination" id="pagination-1"></div>
 									</div>
 
-									Our journey to understand the Universe began by observations of the night sky by eye, leading to ideas like Earth being the center (geocentric) and then the Sun (heliocentric). Newtonian mechanics provided a crucial framework for understanding celestial motion, but Edwin Hubble's monumental discovery of the expanding Universe in the 1920s changed everything. His observations revealed a Universe filled with countless galaxies, extending far beyond our own. Great debate?
+									Our journey to understand the Universe began by observations of the night sky by eye, leading to ideas like Earth being the center (geocentric) and then the Sun (heliocentric). Newtonian mechanics provided a crucial framework for understanding celestial motion, but Edwin Hubble's monumental discovery of the expanding Universe in the 1920s changed everything. Just prior to this discovery, the Great Debate took place in 1920 between astronomers Harlow Shapley and Heber Curtis. Shapley argued that the Milky Way was the entire Universe, while Curtis countered that "spiral nebulae" (now known as galaxies) existed beyond the Milky Way. This debate highlighted the need for more evidence and ultimately contributed to the understanding that the Universe is indeed vast and contains numerous galaxies. Hubble's subsequent work and observations, such as the discovery of galaxies receding from us, provided critical evidence in favor of Curtis's position and played a pivotal role in reshaping our understanding of the cosmos. Extrapolating this expansion backward in time, all matter and energy in the Universe must have been concentrated in an incredibly hot and dense state.
+
+									<br></br>
+									Albert Einstein's theory of General Relativity, formulated in 1915, laid the theoretical groundwork for understanding the dynamics of the cosmos. However, it was the work of Alexander Friedmann and Georges Lemaître in the 1920s that applied Einstein's equations to cosmology. Friedmann's equations mathematically described an expanding Universe, and Lemaître independently derived similar results, also proposing a primeval atom or the "Big Bang." Their combined efforts, alongside Edwin Hubble's observational evidence, significantly advanced our understanding of the Universe's expansion, ultimately leading to the development of the Big Bang Theory and reshaping the field of cosmology. It wasn't until the 1960s that the Big Bang theory would gain widespread acceptance within the scientific community.
+
+									<br></br>
+									In the cosmic orchestra of light, one melody stands out as the key to unlocking the secrets of our Universe: the cosmic microwave background (CMB). Discovered accidentally in 1965 by Arno Penzias and Robert Wilson, this faint radiation in the microwave waveband fills the entire sky. The CMB is a relic from the early days of the Universe, when it transitioned from a hot, dense state to a cooler, expanding cosmos. It measures at a chilly 2.7 Kelvin (-270.45 Celsius) (yes, thanks to the shape of the light spectrum from this black-body radiation we can actually compute its temperature) in all directions across the sky, with only very slight variations (anisotropies). Since these regions are too far apart to have ever been in causal contact during the finite age of the universe, their similarity in temperature poses an intriguing puzzle. The conclusion was that they share a common origin, also was consistent with Hubble's discovery that galaxies were closer together in the past. The primordial event that birthed our universe - the Big Bang - became the most compelling theory for the origin and evolution of the cosmos.
 
 									<br></br>
 
-									In the cosmic orchestra of light, one melody stands out as the key to unlocking the secrets of our Universe: the cosmic microwave background (CMB). Discovered accidentally in 1965 by Arno Penzias and Robert Wilson, this faint radiation in the microwave waveband fills the entire sky. The CMB is a relic from the early days of the Universe, when it transitioned from a hot, dense state to a cooler, expanding cosmos. It measures at a chilly 2.7 Kelvin corresponding to -270.45 degrees Celsius (yes, thanks to the shape of the light spectrum from this black-body radiation we can actually compute its temperature) in all directions across the sky, with only very slight variations (anisotropies). Since these regions are too far apart to have ever been in causal contact during the finite age of the universe, their similarity in temperature poses an intriguing puzzle. The conclusion was that they share a common origin - the primordial event that birthed our universe - thus solidifying the Big Bang as the most compelling theory for the origin and evolution of the cosmos.
-
-									<br></br>
-
-									Accelerated expansion...
-
-									The accidental detection of the cosmic microwave background (CMB) in 1965 further solidified the concept of the Big Bang Theory. With remarkable advancements in observational astronomy and technology, we have meticulously mapped millions of galaxies across the night sky.
+									The discovery of accelerated expansion, achieved through the observation of distant supernovae in the late 20th century, fundamentally altered our cosmic perspective. Past galaxy redshift surveys, like the Sloan Digital Sky Survey, unveiled the intricate cosmic web of galaxy clusters and voids. Building on these achievements, advanced observational techniques and upcoming surveys such as the Large Synoptic Survey Telescope (LSST) and the Euclid mission will map millions of galaxies with unprecedented precision. These surveys promise to delve deeper into the Universe, addressing mysteries surrounding dark energy, dark matter, and the ultimate fate of the cosmos.
 
 									<br></br>
 
 									<header>
 										<h4>Mapping the Universe with Multi-Billion Dollar Surveys</h4>
-										<p>Angular position... Redshift... </p>
+										Mapping the Universe with multi-billion-dollar surveys involves ambitious astronomical projects aimed at systematically observing and cataloging objects and phenomena in the cosmos. A significant focus of these surveys is on galaxy redshift surveys and the large-scale structure of the universe. They use advanced telescopes and instruments to measure the redshifts of galaxies, enabling the creation of detailed 3D maps of the distribution of galaxies in space. This mapping of large-scale structure helps us understand how galaxies are distributed, how the universe evolves, and provides crucial insights into the nature of dark matter and dark energy, contributing to our overall understanding of the cosmos.
+
+										<br></br>
+
+										Stage IV surveys, in the context of astrophysical and cosmological research, represent a high level of sophistication and ambition in observational astronomy. These surveys are characterized by their advanced technology, large-scale data collection, and specific focus on addressing fundamental questions about the universe. Examples of Stage IV surveys include the Dark Energy Spectroscopic Instrument (DESI), the Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST), and the Euclid space mission, among others. These surveys are instrumental in pushing the boundaries of our understanding of the universe and its fundamental properties.
+
+										<br></br>
+
+										<!-- Slider HTML -->
+										<div class="splide" id="slider-2">
+												<div class="splide__track" id="track-2">
+														<ul class="splide__list" id ="list-2">
+
+
+																<li class="splide__slide">
+																	<!-- <a href="images/sdss_instrument.png" data-lightbox="slideshow2" data-title="text." data-show-toggle=False> -->
+																	<img src="images/sdss_instrument.png" alt="Image 1">
+																	<div class="splide__text-bar"><strong>The SDSS map of the Universe.</strong> Each dot is a galaxy; the color is the g-r color of that galaxy. The Sloan Digital Sky Survey (SDSS) is one of the most ambitious and influential surveys in the history of astronomy. Over eight years of operations (SDSS-I, 2000-2005; SDSS-II, 2005-2008), it obtained deep, multi-color images covering more than a quarter of the sky and created 3-dimensional maps containing more than 930,000 galaxies and more than 120,000 quasars. Image credit: <a href="http://www.sdss4.org">M. Blanton and SDSS</a> (left), Fermilab Visual Media Services (right). </div>
+																</li>
+
+																<!-- https://classic.sdss.org/gallery/gal_photos.php -->
+
+																<li class="splide__slide">
+																		<img src="images/euclid_copy.png" alt="Image 1">
+																		<div class="splide__text-bar"><strong>Euclid Space Mission </strong> was launched by the European Space Agency (ESA) in July 2023 to L2 in space. Primary Goals: Euclid's primary goal is to investigate the nature of dark energy and dark matter by mapping the geometry of the dark universe. It will measure the shapes and redshifts of galaxies and galaxy clusters over a wide range of cosmic history. By doing so, Euclid aims to provide precise constraints on the accelerated expansion of the universe and contribute to our understanding of these mysterious cosmic components. Image credit: ESA/ATG medialab (spacecraft); NASA, ESA, CXC, C. Ma, H. Ebeling and E. Barrett (University of Hawaii/IfA), et al. and STScI (background).</div>
+																		<!-- https://www.space.com/36195-euclid-esa-facts.html, https://www.jpl.nasa.gov/missions/euclid -->
+																</li>
+																<li class="splide__slide">
+																		<img src="images/LSST.jpeg" alt="Image 2">
+																		<div class="splide__text-bar"><strong>The Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST)</strong> is situated in the foothills of the Andes Mountains in Chile. LSST's primary goal is to observe the entire southern sky repeatedly over a ten-year period, capturing images of billions of astronomical objects. LSST aims to study dark matter, dark energy, supernovae, and various transient phenomena, while also contributing to our understanding of the structure and evolution of the universe. Image credit: Rubin Observatory/NSF/AURA/B. Quint. </div>
+
+																		<!-- https://noirlab.edu/public/images/iotw2207a/ -->
+																</li>
+																<li class="splide__slide">
+																		<img src="images/desi.png" alt="Image 3">
+																		<div class="splide__text-bar"><strong>Dark Energy Spectroscopic Instrument (DESI)</strong> is located at the Kitt Peak National Observatory in Arizona. DESI's primary goal is to study dark energy by conducting a massive spectroscopic survey of galaxies and quasars. It aims to measure the redshifts of tens of millions of galaxies and quasars to create a 3D map of the universe. This map will help scientists understand the expansion history of the universe and the nature of dark energy, which is responsible for the accelerated cosmic expansion. Image credit: Berkeley Lab/Marilyn Sargent, photographer.
+																		</div>
+																</li>
+														</ul>
+												</div>
+										</div>
+
+										<div class="splide__pagination-container">
+												<div class="splide__pagination" id="pagination-2"></div>
+										</div>
+
 									</header>
 
 									<header>
 										<h4>Digital Twin of the Universe on Large Scales</h4>
-										<p>Can we simulate OUR universe? For that we need not only the physical laws govering our Universe, but also the initial conditions (how everything looked like at the beginning of time). </p>
+										Creating a digital twin of the Universe on large scales is a captivating challenge. To simulate our cosmos accurately, we must comprehend the physical laws governing the Universe and capture its initial conditions, essentially recreating how everything appeared at the beginning of time. This complex endeavor has led to the development of cutting-edge algorithms like the Bayesian Origin Reconstruction from Galaxies (BORG), which uses the vast datasets of the galaxy distribution (the previous section) and their observed properties to infer the primordial conditions. The inferred initial conditions from BORG can then be used in sophisticated simulation codes like N-body simulations to simulate the entire structure formation history of our universe. Watching the familiar structures we know exist in our universe emerge from a computer calculation is a truly exhilarating experience.
+
+										<br></br>
+										<strong>This is what I'm working on!</strong> In brief terms: use the observed galaxy distribution to find the initial conditions, which can then be used to create a digital twin of the entire evolution of our unverise. See more here: <a href="current_research.html"> Current Research </a> and <a href="news_and_recommendations.html">News and Recommendations</a>.
+
+										<br></br>
+										An international team of researchers, including cosmologists from my group here in Stockholm, have produced the largest and most accurate virtual representation of our Universe to date - <a href="https://smcalpine.com/sibelius-dark">the Sibelius-Dark simulations</a> by <a href="	https://arxiv.org/pdf/2202.04099.pdf">(McAlpine S., 2022)</a>. At the very centre of the simulation (and our own Universe of course!) is the Milky Way galaxy, and our nearest massive neighbour, the Andromeda galaxy (known as M31):
+										<br></br>
+
+										<a href="images/localenvironment.png" data-lightbox="my-group" data-title="A constrained realisation simulation of the Local Universe. Credit: McAlpine, S. (2022)" data-show-toggle=False>
+										<span class="image top"><img src="images/localenvironment.png" alt="" /></span>
+
 									</header>
+
+							<br></br>
 
 							<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 							<script>
@@ -520,6 +565,20 @@
 					        }
 					    </script>
 
+							<script>
+							document.addEventListener('DOMContentLoaded', function () {
+							    // Initialize the first Splide slider
+							    new Splide('#slider-1', {
+							        // Add your options for the first slider here
+							    }).mount();
+
+							    // Initialize the second Splide slider
+							    new Splide('#slider-2', {
+							        // Add your options for the second slider here
+							    }).mount();
+							});
+							</script>
+
 
 									</div>
 
@@ -570,18 +629,18 @@
 							    </script>
 
 									<!-- Footer -->
-										<footer id="footer">
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-												<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-											</ul>
-											<ul class="copyright">
-												<li>&copy; Ludvig Doeser 2021</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-											</ul>
-										</footer>
+									<footer id="footer">
+										<ul class="icons">
+											<li><a href="https://www.facebook.com/ludvig.doeser/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="https://www.instagram.com/ludvigdoeser/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="https://www.linkedin.com/in/ludvig-doeser/" class="icon brands fa-linkedin"><span class="label">Dribbble</span></a></li>
+											<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+											<li><a href="mailto:ludvig.doeser@fysik.su.se" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+										</ul>
+										<ul class="copyright">
+											<li>&copy; Ludvig Doeser 2023</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</footer>
 
 								</div>
 

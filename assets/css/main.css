@@ -4021,3 +4021,61 @@ input, select, textarea {
   margin-right: auto;
   width: 10%;
 }
+
+/* Basic styling for slider container */
+		.splide {
+				width: 80%; /* Adjust the width as needed */
+				margin: 0 auto;
+		}
+
+		/* Styling for pagination dots container */
+		.splide__pagination-container {
+				text-align: center;
+				margin-top: 30px;
+		}
+
+		/* Styling for pagination dots */
+		.splide__pagination li {
+				width: 20px; /* Adjust the width to make the dots larger */
+				height: 20px; /* Adjust the height to make the dots larger */
+				margin: 0 5px; /* Adjust spacing between dots */
+				background-color: rgba(0, 0, 0, 0);
+				border-radius: 50%;
+				transition: background-color 0.3s;
+				cursor: pointer;
+				display: inline-block;
+		}
+
+		.splide__pagination li.is-active {
+				background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		/* Force a fixed height for the images */
+		.splide__slide {
+				padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+				position: relative;
+		}
+
+		.splide__slide img {
+				position: absolute;
+				width: 98%;
+				height: 100%;
+				object-fit: cover;
+		}
+
+		/* Styling for the text bar */
+		.splide__text-bar {
+				position: absolute;
+				bottom: 0%;
+				left: 0%;
+				width: 100%;
+				background-color: #ffffff;
+				opacity: 90%;
+				color: black;
+				padding: 10px;
+				padding-bottom: 30px;
+				padding-right: 20px;
+				padding-left: 20px;
+				font-size: 12px; /* Adjust the font size as needed */
+				line-height: 1.5; /* Adjust the line-height for less vertical spacing between text lines */
+		}
